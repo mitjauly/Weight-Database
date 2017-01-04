@@ -20,8 +20,7 @@ namespace WeightDatabase
         SqlConnection cn;
         public mainform()
         {
-            InitializeComponent();
-            //  df = DbProviderFactories.GetFactory(dp);
+
 
             SqlConnection cn = new SqlConnection(cnStr);
             cn.ConnectionString = cnStr;
@@ -31,7 +30,7 @@ namespace WeightDatabase
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //cn is SqlConnection
+       
             using (SqlConnection cn = new SqlConnection(cnStr))
             { 
                 cn.ConnectionString = cnStr;
@@ -70,7 +69,7 @@ namespace WeightDatabase
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
-            //this.weightsDatabaseDataSet.Update(this.dsTab.tab);
+           
             usersTableAdapter.Update(weightsDatabaseDataSet.users);
             Validate();
         }
@@ -135,7 +134,7 @@ namespace WeightDatabase
 
             SqlDataAdapter aaa = new SqlDataAdapter(cm);
             aaa.Fill(dt);
-            //  bindingSource1.DataSource = dt;
+         
             dataGridView3.DataSource = dt;
             cn.Close();
            }
